@@ -1029,6 +1029,7 @@ background: linear-gradient(5deg, rgba(13,5,38,1) 0%, rgba(4,6,52,1) 0%, rgba(42
 
         .light {
             color: white;
+            line-height: 30px ;
         }
 
 
@@ -1214,3 +1215,7 @@ background: linear-gradient(5deg, rgba(13,5,38,1) 0%, rgba(4,6,52,1) 0%, rgba(42
             filter: none;
             opacity：1;
         }
+
+.changeopc:hover {
+    opacity: 0.4;
+}
