@@ -1276,3 +1276,43 @@ body {
         #myDiv {
           display: none;
         }
+.lebal {
+    position: relative;
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255 ,0.4);
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+            box-shadow: 2px 1px 4px black;
+}
+
+.lebal:hover {
+    opacity: 1;
+    transition: 1s;
+    box-shadow: 2px 1px 4px black;
+    box-shadow: 0px 0px 5px white;
+    
+}
+
+.box {
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(255, 255, 255 ,0.5);
+    align-items: center;
+    justify-content:flex-end;
+    box-shadow: 1px 1px 8px black;
+        box-shadow: 2px 1px 10px black;
+}
+
+
+
+.lebal p {
+    width: 20px;
+    color: white;
+    line-height: 15px;
+    margin: 0px;
+    font-size: 10px;
+
+}
