@@ -2004,7 +2004,24 @@ $(document).ready(function() {
         });
      }, 500);
 </script>
-    
+  
+    <script>
+		var system ={
+		win : false,
+		mac : false,
+		xll : false
+		};
+		//檢測平臺
+		var p = navigator.platform;
+		system.win = p.indexOf("Win") == 0;
+		system.mac = p.indexOf("Mac") == 0;
+		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+		//跳轉語句，如果是手機訪問就自動跳轉到手機端wap頁面
+		if(system.win||system.mac||system.xll){
+		}else{
+		window.location.href="http://mobile/index.html";//手機端網址
+		}    
+    </script>
 
     
 </body>
