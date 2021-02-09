@@ -29,7 +29,7 @@
 
 </head>
 
-<body style="background-color: #020119;border: 0px;font-family:'FangSong','Microsoft YaHei';overflow-x: hidden;" data-spy="scroll" data-target="#list-example" data-offset="0">
+<body style="background-color: #020119;border: 0px;font-family:'FangSong','Microsoft YaHei';overflow-x: hidden;" data-spy="scroll" data-target="#list-example" data-offset="0" onload="myFunction()">
     
     <div id="loader">
         <div style="display:none;" id="myDiv" class="animate-bottom"></div>
@@ -1997,12 +1997,16 @@ $(document).ready(function() {
     </script>
     
 <script>
-    setTimeout(function () {
-        $(document).ready(function () {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("myDiv").style.display = "block";
-        });
-     }, 500);
+    var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 </script>
   
     <script>
