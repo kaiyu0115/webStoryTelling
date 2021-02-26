@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        #tofix1 {
+            z-index: 99;
+        }
+
+        #tofix2 {
+            z-index: 98;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+        }
+
+        .bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="height: 1000px; background-color: black;">
+
+
+    </div>
+    <div id="" class="" style="width:100%;height:5000px;background-color: black;">
+        <div class="bg" data-pos=1 style="height: 100vh;background-image: url(assets/IMG_6857-2.jpg)">
+        </div>
+        <div style="min-height: 30px;"></div>
+        <div class="bg" data-pos=0 style="height: 100vh;background-image: url(assets/IMG_6881-2.jpg)">
+                        <p>在酒店裡出場分兩種，純出與S出，純出是單純和客人離開酒店，單獨到公共場所相處，像是去公園散步或吃宵夜，純出是不能拒絕的；而S出則是指離開酒店，到其他場所進行性交易，公關可以憑藉自己的意願，決定是否接受，當然性交易目前屬於不合法的行為，具有觸犯法律的問題。</p>
+            <p>在酒店裡出場分兩種，純出與S出，純出是單純和客人離開酒店，單獨到公共場所相處，像是去公園散步或吃宵夜，純出是不能拒絕的；而S出則是指離開酒店，到其他場所進行性交易，公關可以憑藉自己的意願，決定是否接受，當然性交易目前屬於不合法的行為，具有觸犯法律的問題。</p>
+            <p>在酒店裡出場分兩種，純出與S出，純出是單純和客人離開酒店，單獨到公共場所相處，像是去公園散步或吃宵夜，純出是不能拒絕的；而S出則是指離開酒店，到其他場所進行性交易，公關可以憑藉自己的意願，決定是否接受，當然性交易目前屬於不合法的行為，具有觸犯法律的問題。</p>
+        </div>
+        <div style="min-height: 30px;"></div>
+        <div class="bg" data-pos=-1 style="height: 100vh;background-image: url(assets/IMG_6946-2.jpg)">
+        </div>
+        <div style="height: 1oovh;color: white;">
+
+        </div>
+    </div>
+
+
+
+    <div class="" style="height:1000vh; background-color: black;">
+        <h1>END</h1>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            var tofix1_height = $('#tofix1').offset().top; //Reserve the original height
+
+            $(window).scroll(function() {
+                var current_pos = $(window).scrollTop();
+                console.log(current_pos, ",", tofix1_height);
+                if (current_pos >= tofix1_height & current_pos < 5500) {
+                    $('#tofix1').addClass('fixed');
+                } else {
+                    $('#tofix1').removeClass('fixed');
+                }
+
+
+            });
+        })
+    </script>
+
+    <script>
+        $(window).scroll(function() {
+
+            var scrolled = $(document).scrollTop();
+            $(".bg").each(function() {
+                var parent_pos = $(this).parent().offset().top;
+                var parent_h = $(this).parent().height();
+                var pos = $(this).offset();
+                var wh = $(window).height();
+                $(this).css({
+                    "opacity": (scrolled * 0.8 - wh) / wh + $(this).data("pos")
+                })
+
+            });
+
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

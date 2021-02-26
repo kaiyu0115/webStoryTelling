@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>鄒凱宇的作品集</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/38c0fa8ae6.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="css/main.css" rel="stylesheet">
+
+
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: 'Noto Serif TC', serif;
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        width: 100%;
+        height: 40vh;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        height: 100%;
+        display: none;
+    }
+    
+    .mySlides img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+        background-color: #717171;
+    }
+
+     /* turnwhite animation */
+    .turnblack {
+        background-color: black;
+        border: none;
+        transition: all 0.6s ease;
+    }
+    
+    .turnwhite {
+         background-color: white;
+        border: none;
+        transition: all 0.6s ease;
+        
+    }
+    
+    @keyframes turnwhite {
+        from {
+            background-color: black;
+        }
+
+        to {
+           background-color: white;
+        }
+    }
+    
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .7
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .7
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    .w3-third img {
+        margin-bottom: -6px;
+        opacity: 0.8;
+        cursor: pointer
+    }
+
+    .w3-third img:hover {
+        opacity: 1
+    }
+
+    /* Create a Parallax Effect */
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+        min-height: 100%;
+    }
+
+    /* Second image (Portfolio) */
+    .bgimg-2 {
+        min-height: 400px;
+    }
+
+    /* Third image (Contact) */
+    .bgimg-3 {
+        min-height: 400px;
+    }
+
+    .w3-wide {
+        letter-spacing: 6px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    #mySidebar {
+        transition: all is ease;
+        box-shadow: 0 0 10 rgba(0,0,0,0.5)!important;
+    }
+    
+    
+    
+    #mySidebar
+    
+    
+    
+    #mySidebar a.active {
+        font-weight: 900!important;
+    }
+
+    .shadow {
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+    }
+    
+    .glass {
+        -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      -moz-backdrop-filter: blur(8px);
+    }
+    
+    .mycard .card-body {
+        transform: translateY(10%);
+    }
+    
+    .mycard .card-img-top {
+        
+    }
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            background-attachment: scroll;
+            min-height: 400px;
+        }
+    }
+    
+    
+</style>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block  w3-animate-left w3-text-grey w3-collapse w3-top w3-center " style="z-index:3;width:300px;font-weight:bold;box-shadow: 6px 0px 10px rgba(0,0,0,0.5);border: none;" id="mySidebar" ><br>
+        <h3 class="w3-padding-16 w3-center" style="margin-top: 20%;"><a href="#pagetop" onclick="w3_close()" class="w3-bar-item w3-button"><b>鄒凱宇</b></a> </h3>
+        <img src="assets/proflio/%E7%85%A7%E7%89%87.jpg" style="width: 200px;border-radius: 50%;">
+        <ul class="navbar-nav" id="navbar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+            <button class="w3-button nav-item">
+                <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a>
+            </button>
+
+            <div class="w3-dropdown-hover ">
+                <button class="w3-button"><a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a></button>
+                <div class="w3-dropdown-content ">
+                    <li class="nav-item "><a href="#photography" onclick="w3_close()" class="w3-bar-item w3-button">攝影</a></li>
+                    <li class="nav-item "><a href="#design" onclick="w3_close()" class="w3-bar-item w3-button">設計繪圖</a> </li>
+                    <li class="nav-item "><a href="#events" onclick="w3_close()" class="w3-bar-item w3-button">活動經驗</a> </li>
+                </div>
+            </div>
+            <button class="w3-button nav-item">
+                <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+            </button>
+
+        </ul>
+
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">鄒凱宇</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">&#9776;</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px;padding: 0px;margin-right: 0px;" id="pagetop" data-spy="scroll" data-target="#mySidebar">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+        <!-- Photo grid -->
+
+
+        <div class="bgimg-1 w3-display-container" id="home" style="background-image: url(assets/proflio/pho/beautifulnight.jpg);background-attachment: fixed;height: 100vh;background-position: left;">
+            <div class="w3-display-middle w3-center w3-padding-large w3-xlarge w3-wide glass" style="white-space:nowrap;background-color: white;color: black;;mix-blend-mode: screen;opacity: 0.6;">
+                <h1 style="font-weight: 800;font-size: 240%;">吾感再噪</h1>
+
+            </div>
+        </div>
+
+        <!-- About section -->
+        <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+            <h1 class=""><b>關於我</b></h1>
+            <hr class="light" style="margin: 10px auto">
+            <img src="/assets/proflio/kk.jpg" alt="Me" class="w3-image w3-padding-32" width="400px" height="400px">
+            <div class="w3-content w3-justify" style="max-width:600px">
+                <h4>鄒凱宇 Kai-yu Tsou</h4>
+                <p>抱著不服輸與想嘗試的熱情了踏入台大生傳，
+                    開啟了對行銷、傳播與農業的不解之緣。
+                    喜歡設計、攝影與電繪，相信所有事物只要有
+                    故事就會有價值，目前正嘗試學著如何以最引
+                    人共鳴的方式闡述這塊土地的物產之美與人文
+                    風土。
+                    堅持不挑簡單的事情做，不斷學習只為替自己
+                    多加幾條斜槓，並且學會怎麼解決問題。
+                </p>
+
+                <div class="container-fluid" style="margin: 0px;width: 100%;">
+                    <div class="row  text-center" style="padding: 0px;">
+                        <div class="col-xs-12 col-sm-6 col-md-4" style="">
+                            <i class="fas fa-code"></i>
+                            <h2>設計</h2>
+                            <p>解決問題</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <i class="fas fa-bold"></i>
+                            <h2>行動</h2>
+                            <p>面對新的挑戰</p>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <i class="fab fa-css3"></i>
+                            <h2>土地</h2>
+                            <p>找回在地能量</p>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+
+                </div>
+
+                <hr class="w3-opacity">
+                <h4 class="w3-padding-16">Technical Skills</h4>
+                <p class="w3-wide" style="margin: 5px 0px;">Photography</p>
+                <div class="w3-white " style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%">95%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Web front-end design</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Photoshop</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Illustrator</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Lightroom</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Premiere</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Digital Painting</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Social Media Operating</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">SEO</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">Google Analytics</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                </div>
+
+                <p><button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom" href="/assets/proflio/beergame.jpg" download="履歷">Download Resume</button></p>
+                <hr class="w3-opacity">
+
+
+
+                <h4 class="w3-padding-16">過去經驗</h4>
+                <ul class="w3-ul  ">
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">台大生傳系學會活動部長</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">2018台大師大十系聯合舞會總召兼主視覺設計</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">第十五屆台大詞曲創作社公關</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">2019曼波屁股露天電影執行長</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">第六屆台大音樂節行銷部</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">107學年度台大畢聯會行銷設計部</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">台北慕尼黑啤酒節籌備團隊</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">課堂自創品牌Jammy＆Frezzy's成員-企畫</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">2019生傳之夜總召兼行銷總監</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">2019台大傳播營公關</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">第十二屆台大新生書院籌備人員與遊戲美術</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">VEDA頤德國際數位行銷Intern</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">108學年度台大畢聯會副召</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">畢聯會X一卡通專案企畫負責人</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">2020 水保局農村好物頒獎典禮</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">教育部 USR 線上展微電影比賽 場域探勘組 最佳社影獎</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">2020九份青雲殿神農氏專曲企劃</li>
+                    <li class="w3-padding-6 w3-opacity w3-hover-opacity-off" style="border-bottom: none;border-left: 2px solid #ddd">第一屆生傳畢業製作總召-藝術總監</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">14+</span><br>
+                Partners
+            </div>
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">55+</span><br>
+                Projects Done
+            </div>
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">89+</span><br>
+                Happy Clients
+            </div>
+            <div class="w3-quarter w3-section">
+                <span class="w3-xlarge">150+</span><br>
+                Meetings
+            </div>
+        </div>
+
+        <div class="w3-content w3-container text-center" style="margin: 0px;padding: 0px;">
+            <!-- 隱藏評價-->
+            <button class="" type="button" data-toggle="collapse" data-target="#comment" aria-controls="#comment" aria-expanded="false" aria-label="Toggle navigation" style="height: 100px;width: 100%;padding: 0px;margin: 0px;font-size: 150%;border: none;background-color:rgba(0,0,0,0.3);cursor: pointer;">他人評價</button>
+            <div class="collapse " id="comment" style="">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <img src="/w3images/avatar_smoke.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                    <p><span class="w3-large w3-text-black w3-margin-right">Chandler Bing.</span> Web Designer.</p>
+                    <p>Jane Doe is just awesome. I am so happy to have met her!</p><br>
+
+                    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                    <p><span class="w3-large w3-text-black w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+                    <p>Jane Doe saved us from a web disaster.</p><br>
+
+                    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+                    <p><span class="w3-large w3-text-black w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+                    <p>No one is better than Jane Doe.</p><br>
+                </ul>
+            </div>
+
+
+
+        </div>
+
+        <div class="w3-content w3-containe py-3" style="padding-top: 10px;" id="portfolio">
+            <h1 class="w3-padding-16 text-center">作品集</h1>
+            <hr class="gray" style="margin: 10px auto">
+        </div>
+
+
+        <!-- Second Parallax Image with Portfolio Text -->
+        <div class="bgimg-2 w3-display-container w3-opacity-min" style="background-image: url(assets/proflio/pho/darkforest.jpg);background-attachment: fixed;">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide shadow">攝影/編劇</span>
+            </div>
+        </div>
+
+        <div class="w3-content w3-container w3-padding-64" id="photography">
+            <h3 class="w3-center">捕捉生活中的細膩</h3>
+            <p class="w3-center"><em> Click on the images to make them bigger</em></p><br>
+
+
+            <div class="w3-row-padding w3-center  w3-section">
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/AbandonedBuilding.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/3cupsofbeer.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/1091music.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/USR.png" style="width:100%;height: 139px;max-height: 100%; object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                </div>
+            </div>
+
+            <div class="w3-row-padding w3-center  w3-section">
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/darkview.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/dog.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/moringroad.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/nightmoon.jpg" style="width:100%;height: 120%;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                </div>
+            </div>
+
+            <div class="w3-row-padding w3-center w3-section" style="">
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/amazing.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/BEERS.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/food2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/pho/MysteriousCat.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+                </div>
+                <div class="col-12" style="display: flex;align-items: center;justify-content: center;">
+                    <button class="w3-btn w3-padding-large w3-light-grey" style="margin:32px auto;border: 1px solid #000"><a href="">SEE MORE</a></button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'" style="max-height: 100vh;">
+            <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption" class="w3-opacity w3-large"></p>
+            </div>
+        </div>
+
+        <!-- Second Parallax Image with Portfolio Text -->
+        <div class="bgimg-2 w3-display-container w3-opacity-min" style="background-image: url(assets/proflio/des/sunrise.jpg);background-attachment: fixed;" id="design">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide shadow">設計繪圖</span>
+            </div>
+        </div>
+
+        <div class="w3-content w3-container w3-padding-64">
+            <h3 class="w3-center">尋找新的靈感</h3>
+            <p class="w3-center"><em> Click on the images to make them bigger</em></p><br>
+
+
+            <div class="w3-row-padding w3-center  w3-section">
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/beergame.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/guam1cover.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/guamnewyear.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/hondalf.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                </div>
+            </div>
+
+            <div class="w3-row-padding w3-center  w3-section">
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/kydesign.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/magicforest.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/nogame.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/phantastic.JPG" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                </div>
+            </div>
+
+            <div class="w3-row-padding w3-center w3-section">
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/roadkill.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="/assets/proflio/des/Snow%20Fox.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="assets/proflio/des/sunrise.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+                </div>
+
+                <div class="w3-col m3">
+                    <img src="assets/proflio/des/ThatNight.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+                </div>
+                <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px;border: 1px solid #000"><a href="">SEE MORE</a></button>
+            </div>
+        </div>
+
+        <!-- Modal for full size images on click-->
+        <div id="modal02" class="w3-modal w3-black" onclick="this.style.display='none'">
+            <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption" class="w3-opacity w3-large"></p>
+            </div>
+        </div>
+
+        <!-- Second Parallax Image with Portfolio Text -->
+        <div class="bgimg-2 w3-display-container w3-opacity-min" id="events" style="background-image: url(assets/proflio/mar/sunmai.png);background-attachment: fixed;">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide shadow">過往專案</span>
+            </div>
+        </div>
+
+        <div class="w3-content w3-container w3-padding-64">
+            <h3 class="w3-center">嘗試新的冒險</h3>
+            <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+
+            <!-- Photography Start -->
+            <div id="" class="">
+                <!--- Two Column Section -->
+                <div class="container-fluid padding">
+                    <div class="row ">
+                        <div class="col-lg-4 mb-4 my-lg-auto" id="row4">
+                            <h2 class="text-dark font-weight-bold mb-3 ml-5">活動策畫與協辦</h2>
+                            <p class="mb-4 ml-5">參加校內、校外等大小專案<br>
+                                從行銷企劃到遊戲設計
+                            </p>
+                            <br>
+                            <a href="#" target="_blank" class="btn btn-primary btn-lg ml-5">Learn More</a>
+                        </div>
+                        <div class="col-lg-8">
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="numbertext">1 / 3</div>
+                                    <img src="assets/proflio/mar/live.jpg" style="width:100%">
+                                    <div class="text">Caption Text</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext">2 / 3</div>
+                                    <img src="assets/proflio/mar/%E6%B4%84%E6%B8%B8.PNG" style="width:100%">
+                                    <div class="text">Caption Two</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext">3 / 3</div>
+                                    <img src="assets/proflio/mar/%E9%BA%BB%E8%B1%86%E8%BE%B2%E6%9C%83.PNG" style="width:100%">
+                                    <div class="text">Caption Three</div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center;position: relative;;margin-top: 10px;">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+            </div>
+            <!-- Photography End -->
+        </div>
+
+        <div class="bgimg-3 w3-display-container w3-opacity-min" id="contact" style="background-image: url(assets/proflio/pho/coco.jpg);background-attachment: fixed;">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide shadow">聯絡我們</span>
+            </div>
+        </div>
+
+        <!--- Meet the team -->
+        <div class="container-fluid padding">
+            <div class="row welcome text-center">
+                <div class="col-12">
+                    <h1>團隊夥伴</h1>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+
+        <!--- Cards -->
+        <div class="container-fluid padding">
+            <div class="row padding">
+                <div class="col-md-4">
+                    <div class="card mycard">
+                        <img class="card-img-top" src="assets/team1.png">
+                        <div class="card-body">
+                            <h4 class="card-tittle">card</h4>
+                            <p class="card-text">this is a card.</p>
+                            <a href="#" class="btn btn-primary ">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mycard">
+                        <img class="card-img-top" src="assets/team2.png">
+                        <div class="card-body">
+                            <h4 class="card-tittle">card</h4>
+                            <p class="card-text">this is a card.</p>
+                            <a href="#" class="btn btn-primary ">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mycard">
+                        <img class="card-img-top" src="assets/team3.png">
+                        <div class="card-body">
+                            <h4 class="card-tittle">card</h4>
+                            <p class="card-text">this is a card.</p>
+                            <a href="#" class="btn btn-primary ">See Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact section -->
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contactme">
+            <div class="w3-content" style="max-width:600px">
+                <h4 class="w3-center"><b>Contact Me</b></h4>
+
+                <div class="row">
+                    <div class="col-lg-4 mb-4 my-lg-auto"  style="" id="row4">
+                        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <br>新北市板橋區忠孝路190巷16號8樓<br>
+                        <br>
+                        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <br>Phone: 0966-050-345<br>
+                        <br>
+                        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <br>Email: kev80814@gmail.com<br>
+                    </div>
+                    <div class="col-lg-8">
+                        <p>如有聯繫需求，也可以直接填寫並送出下方表格，感謝!</p>
+                        <form action="/action_page.php" target="_blank">
+                            <div class="w3-section">
+                                <label>Name</label>
+                                <input class="w3-input w3-border" type="text" name="Name" required>
+                            </div>
+                            <div class="w3-section">
+                                <label>Email</label>
+                                <input class="w3-input w3-border" type="text" name="Email" required>
+                            </div>
+                            <div class="w3-section">
+                                <label>Message</label>
+                                <input class="w3-input w3-border" type="text" name="Message" required>
+                            </div>
+                            <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off" style="position: relative;bottom: -50px;">
+            <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+            <div class="w3-xlarge w3-section">
+                <a href="" ><i class="fab fa-facebook-f w3-hover-opacity " style="width: 30px;color: aqua;"></i></a>
+                <a href="" ><i class="fab fa-instagram w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
+                <a href=""><i class="fab fa-linkedin-in w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
+                <a href=""><i class="fab fa-medium w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
+            </div>
+            <p>Powered by <a href="" title="KaiYu Tsou" target="_blank" class="w3-hover-text-green">KaiYu Tsou</a></p>
+        </footer>
+
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    
+    <script>
+    function myLeaveFunction() {
+        $("#mySidebar").addClass("turnwhite");
+    }
+        
+        
+    </script>
+    
+    <script>
+    $("#mySidebar").hover(
+  function () {
+    $(this).addClass("turnblack");
+      $(this).removeClass("turnwhite");
+  },
+  function () {
+    $(this).addClass("turnwhite");
+       $(this).removeClass("turnwblack");
+  }
+);
+    </script>
+
+
+</body>
+
+</html>

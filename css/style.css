@@ -966,17 +966,7 @@ body {
             text-shadow: 0px 0px 3px white;
         }
 
- #scene1 {
-            background-image: url(assets/project/bg1.jpg);
-        }
 
-        #scene2 {
-            background-image: url(assets/project/bg1.jpg);
-        }
-
-        #scene4 {
-            background-image:url()
-        }
 
         #scene5-1 {
             background: rgb(13, 5, 38);
@@ -995,19 +985,14 @@ body {
             height: 100vh;
         }
 
-        #scene8 {
-            background-image: url(assets/project/bg8.jpg);
-        }
+
 
         #scene9-1 {
             background-image: url(assets/project/bg9.jpg)
         }
 
 
-        #scene10 {
-            background-image: url(assets/project/bg10.jpg);
-
-        }
+ 
 
 
 
@@ -1385,4 +1370,150 @@ body {
      content: "－"; 
   padding-right: 4px;
   color:  #2F56B0; 
+}
+
+.preloader {
+    height:100vh;
+    width: 100vw;
+    position: fixed;
+    left:0px;
+    top: 0px;
+    z-index:1001;
+    transition: 1s;
+    background-color: #000000;
+    opacity: 0.8;
+    
+}
+
+.preloader::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #00f;
+    transition: 1s;
+}
+
+.preloader.complete::before {
+    left: -50%;
+}
+
+.preloader::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #0f0;
+    transition: 1s;
+}
+
+.preloader.complete::after {
+    right: -50%;
+}
+
+.preloader.complete {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#loadingPage{
+    min-width: 100%;
+    min-height: 100%;
+    position:absolute;
+    left:0px;
+    top: 0px;
+    z-index:1001;
+    background-color: #000000;
+    opacity: 0.8;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100vh;
+}
+
+.scrollhide {
+    overflow-y: hidden;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 3px solid #262626;
+    animation: loading 2s linear infinite;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:  #262626;
+    animation: loadingBg 2s linear infinite;
+    
+}
+
+ @keyframes loading {
+     0% {
+         transform: translate(-50%,-50%) rotate(0deg);
+     }
+     25% {
+         transform: translate(-50%,-50%) rotate(180deg);
+     }
+     50% {
+         transform: translate(-50%,-50%) rotate(180deg);
+     }
+     75% {
+         transform: translate(-50%,-50%) rotate(360deg);
+     }
+     100% {
+         transform: translate(-50%,-50%) rotate(360deg);
+     }
+     
+     
+     
+        }
+
+@keyframes loadingBg {
+     0% {
+         height: 0;
+     }
+     25% {
+         height: 0;
+     }
+     50% {
+         height: 100%;
+     }
+     75% {
+         height: 100%;
+     }
+     100% {
+         height: 0;
+     }
+     
+     
+     
+        }
+
+
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
 }
