@@ -1258,6 +1258,18 @@ body {
         #myDiv {
           display: none;
         }
+
+.btn-outline-c {
+    cursor: pointer;
+    outline-color: rgba(164,48,252,0.5)!important;
+    transition: 0.6s;
+}
+
+.btn-outline-c:hover {
+    box-shadow: 0 0 5px rgba(164,48,252,0.5);
+}
+    
+
 .lebal {
     position: relative;
     opacity: 0.8;
@@ -1267,8 +1279,13 @@ body {
     justify-content:flex-end;
     border-bottom-right-radius: 12px;
     border-top-right-radius: 12px;
+    border-color: transparent;
             box-shadow: 2px 1px 4px black;
+    cursor: pointer;
+    outline: none!important;
 }
+
+
 
 .lebal:hover {
     opacity: 1;
@@ -1325,7 +1342,7 @@ body {
 
 .hint::after{
       border-radius: 1em;
-  border-top: 2px solid #2F56B0;
+  border-top: 2px solid #3498db;
   content: "";
   position: absolute;
     right: 0%;
@@ -1340,6 +1357,7 @@ body {
 
 .hint::before{
     box-sizing: content-box;
+    color: #28102d;
     padding: 5px;
     content: "";
     position: absolute;
@@ -1355,7 +1373,7 @@ body {
 
 .hint:hover:before {
     top:-200%;
-    opacity: 80%;
+    opacity: 85%;
      content: attr(data-text);
 }
 
