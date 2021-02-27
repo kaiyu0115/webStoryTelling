@@ -1358,6 +1358,7 @@ body {
 .hint::before{
     box-sizing: content-box;
     color: #28102d;
+    text-shadow: none;
     padding: 5px;
     content: "";
     position: absolute;
@@ -1445,6 +1446,7 @@ body {
 
 .loader {
     position: absolute;
+    z-index: 9;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
