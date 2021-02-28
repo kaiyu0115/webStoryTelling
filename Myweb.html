@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link  href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -15,284 +16,39 @@
 <link href="css/main.css" rel="stylesheet">
 
 
-<style>
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-        font-family: 'Noto Serif TC', serif;
-    }
-
-    * {
-        box-sizing: border-box
-    }
-
-    /* Slideshow container */
-    .slideshow-container {
-        width: 100%;
-        height: 40vh;
-        position: relative;
-        margin: auto;
-    }
-
-    /* Hide the images by default */
-    .mySlides {
-        height: 100%;
-        display: none;
-    }
-    
-    .mySlides img {
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Next & previous buttons */
-    .prev,
-    .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        margin-top: -22px;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
-
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover,
-    .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Caption text */
-    .text {
-        color: #f2f2f2;
-        font-size: 15px;
-        padding: 8px 12px;
-        position: absolute;
-        bottom: 8px;
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Number text (1/3 etc) */
-    .numbertext {
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-    }
-
-    /* The dots/bullets/indicators */
-    .dot {
-        cursor: pointer;
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-    }
-
-    .active,
-    .dot:hover {
-        background-color: #717171;
-    }
-
-     /* turnwhite animation */
-    .turnblack {
-        background-color: black;
-        border: none;
-        transition: all 0.6s ease;
-    }
-    
-    .turnwhite {
-         background-color: white;
-        border: none;
-        transition: all 0.6s ease;
-        
-    }
-    
-    @keyframes turnwhite {
-        from {
-            background-color: black;
-        }
-
-        to {
-           background-color: white;
-        }
-    }
-    
-    /* Fading animation */
-    .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-        animation-fill-mode: forwards;
-    }
-
-    @-webkit-keyframes fade {
-        from {
-            opacity: .7
-        }
-
-        to {
-            opacity: 1
-        }
-    }
-
-    @keyframes fade {
-        from {
-            opacity: .7
-        }
-
-        to {
-            opacity: 1
-        }
-    }
-
-    .w3-third img {
-        margin-bottom: -6px;
-        opacity: 0.8;
-        cursor: pointer
-    }
-
-    .w3-third img:hover {
-        opacity: 1
-    }
-
-    /* Create a Parallax Effect */
-    .bgimg-1,
-    .bgimg-2,
-    .bgimg-3 {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    /* First image (Logo. Full height) */
-    .bgimg-1 {
-        min-height: 100%;
-    }
-
-    /* Second image (Portfolio) */
-    .bgimg-2 {
-        min-height: 400px;
-    }
-
-    /* Third image (Contact) */
-    .bgimg-3 {
-        min-height: 400px;
-    }
-
-    .w3-wide {
-        letter-spacing: 6px;
-    }
-
-    .w3-hover-opacity {
-        cursor: pointer;
-    }
-
-    #mySidebar {
-        transition: all is ease;
-        box-shadow: 0 0 10 rgba(0,0,0,0.5)!important;
-    }
-    
-    
-    
-    #mySidebar
-    
-    
-    
-    #mySidebar a.active {
-        font-weight: 900!important;
-    }
-
-    .shadow {
-        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
-    }
-    
-    .glass {
-        -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      -moz-backdrop-filter: blur(8px);
-    }
-    
-    .mycard .card-body {
-        transform: translateY(10%);
-    }
-    
-    .mycard .card-img-top {
-        
-    }
-
-    /* Turn off parallax scrolling for tablets and phones */
-    @media only screen and (max-device-width: 1600px) {
-
-        .bgimg-1,
-        .bgimg-2,
-        .bgimg-3 {
-            background-attachment: scroll;
-            min-height: 400px;
-        }
-    }
-    
-    
-</style>
-
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-bar-block  w3-animate-left w3-text-grey w3-collapse w3-top w3-center " style="z-index:3;width:300px;font-weight:bold;box-shadow: 6px 0px 10px rgba(0,0,0,0.5);border: none;" id="mySidebar" ><br>
+    <nav class="w3-sidebar w3-bar-block  w3-animate-left w3-text-grey w3-collapse w3-top w3-center  " style="z-index:3;width:300px;font-weight:bold;box-shadow: 6px 0px 10px rgba(0,0,0,0.5);border: none;overflow: hidden;" id="mySidebar" ><br>
         <h3 class="w3-padding-16 w3-center" style="margin-top: 20%;"><a href="#pagetop" onclick="w3_close()" class="w3-bar-item w3-button"><b>鄒凱宇</b></a> </h3>
-        <img src="assets/proflio/%E7%85%A7%E7%89%87.jpg" style="width: 200px;border-radius: 50%;">
+        <img src="assets/proflio/%E7%85%A7%E7%89%87.jpg" style="" class="meimg">
         <ul class="navbar-nav" id="navbar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+            
             <button class="w3-button nav-item">
-                <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a>
+                <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button js-scroll-trigger">ABOUT ME</a>
             </button>
 
             <div class="w3-dropdown-hover ">
-                <button class="w3-button"><a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a></button>
+                <button class="w3-button"><a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button js-scroll-trigger">PORTFOLIO</a></button>
                 <div class="w3-dropdown-content ">
-                    <li class="nav-item "><a href="#photography" onclick="w3_close()" class="w3-bar-item w3-button">攝影</a></li>
-                    <li class="nav-item "><a href="#design" onclick="w3_close()" class="w3-bar-item w3-button">設計繪圖</a> </li>
-                    <li class="nav-item "><a href="#events" onclick="w3_close()" class="w3-bar-item w3-button">活動經驗</a> </li>
+                    <li class="nav-item "><a href="#photography" onclick="w3_close()" class="w3-bar-item w3-button js-scroll-trigger">攝影</a></li>
+                    <li class="nav-item "><a href="#design" onclick="w3_close()" class="w3-bar-item w3-button js-scroll-trigger">設計繪圖</a> </li>
+                    <li class="nav-item "><a href="#events" onclick="w3_close()" class="w3-bar-item w3-button js-scroll-trigger">活動經驗</a> </li>
                 </div>
             </div>
             <button class="w3-button nav-item">
-                <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+                <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button js-scroll-trigger">CONTACT</a>
             </button>
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item btn w3-padding" id="close">CLOSE</a>
 
         </ul>
 
     </nav>
 
     <!-- Top menu on small screens -->
-    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-        <span class="w3-left w3-padding">鄒凱宇</span>
-        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">&#9776;</a>
+    <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding-16" style="">
+        <span class="w3-left w3-padding" style="font-weight: bold">鄒凱宇</span>
+        <a href="javascript:void(0)" class="w3-right w3-button " style="background-color: transparent;" onclick="w3_open()">&#9776;</a>
     </header>
 
     <!-- Overlay effect when opening sidebar on small screens -->
@@ -304,12 +60,11 @@
         <!-- Push down content on small screens -->
         <div class="w3-hide-large" style="margin-top:83px"></div>
 
-        <!-- Photo grid -->
 
 
         <div class="bgimg-1 w3-display-container" id="home" style="background-image: url(assets/proflio/pho/beautifulnight.jpg);background-attachment: fixed;height: 100vh;background-position: left;">
-            <div class="w3-display-middle w3-center w3-padding-large w3-xlarge w3-wide glass" style="white-space:nowrap;background-color: white;color: black;;mix-blend-mode: screen;opacity: 0.6;">
-                <h1 style="font-weight: 800;font-size: 240%;">吾感再噪</h1>
+            <div class="w3-display-middle w3-center w3-padding-large w3-xlarge w3-wide glass" style="white-space:nowrap;background-color:rgba(255,255,255,0.4);color: black;;mix-blend-mode: screen;">
+                <h1 style="font-weight: 800;font-size: 240%;">設計即生活</h1>
 
             </div>
         </div>
@@ -318,7 +73,7 @@
         <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
             <h1 class=""><b>關於我</b></h1>
             <hr class="light" style="margin: 10px auto">
-            <img src="/assets/proflio/kk.jpg" alt="Me" class="w3-image w3-padding-32" width="400px" height="400px">
+            <img src="/assets/proflio/kk.jpg" alt="Me" class="w3-image w3-padding-32" style="filter: drop-shadow(0 0 10px black )drop-shadow(-3px -3px 2px rgba(255,255,255,0.3));" width="400px" height="400px">
             <div class="w3-content w3-justify" style="max-width:600px">
                 <h4>鄒凱宇 Kai-yu Tsou</h4>
                 <p>抱著不服輸與想嘗試的熱情了踏入台大生傳，
@@ -328,25 +83,25 @@
                     人共鳴的方式闡述這塊土地的物產之美與人文
                     風土。
                     堅持不挑簡單的事情做，不斷學習只為替自己
-                    多加幾條斜槓，並且學會怎麼解決問題。
+                    多加幾條斜槓，並且學會利用「設計」來真正解決問題。
                 </p>
 
                 <div class="container-fluid" style="margin: 0px;width: 100%;">
                     <div class="row  text-center" style="padding: 0px;">
                         <div class="col-xs-12 col-sm-6 col-md-4" style="">
-                            <i class="fas fa-code"></i>
+                            <i class="fas fa-pencil-alt"></i>
                             <h2>設計</h2>
-                            <p>解決問題</p>
+                            <p>解決問題核心</p>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                            <i class="fas fa-bold"></i>
+                            <i class="fas fa-puzzle-piece"></i>
                             <h2>行動</h2>
-                            <p>面對新的挑戰</p>
+                            <p>創造新的價值</p>
                         </div>
                         <div class="col-sm-12 col-md-4">
-                            <i class="fab fa-css3"></i>
-                            <h2>土地</h2>
-                            <p>找回在地能量</p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h2>在地</h2>
+                            <p>尋找地方能量</p>
                         </div>
                     </div>
                     <hr class="my-4">
@@ -354,14 +109,14 @@
                 </div>
 
                 <hr class="w3-opacity">
-                <h4 class="w3-padding-16">Technical Skills</h4>
-                <p class="w3-wide" style="margin: 5px 0px;">Photography</p>
+                <h4 class="w3-padding-16">專長技能 Technical Skills</h4>
+                <p class="w3-wide" style="margin: 5px 0px;">攝影 Photography</p>
                 <div class="w3-white " style="margin-bottom: 10px">
                     <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%">95%</div>
                 </div>
-                <p class="w3-wide" style="margin: 5px 0px;">Web front-end design</p>
+                <p class="w3-wide" style="margin: 5px 0px;">網頁前端設計 Web front-end design</p>
                 <div class="w3-white" style="margin-bottom: 10px">
-                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:70%">70%</div>
                 </div>
                 <p class="w3-wide" style="margin: 5px 0px;">Photoshop</p>
                 <div class="w3-white" style="margin-bottom: 10px">
@@ -373,30 +128,42 @@
                 </div>
                 <p class="w3-wide" style="margin: 5px 0px;">Lightroom</p>
                 <div class="w3-white" style="margin-bottom: 10px">
-                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
                 </div>
                 <p class="w3-wide" style="margin: 5px 0px;">Premiere</p>
                 <div class="w3-white" style="margin-bottom: 10px">
-                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:60%">60%</div>
                 </div>
-                <p class="w3-wide" style="margin: 5px 0px;">Digital Painting</p>
+                <p class="w3-wide" style="margin: 5px 0px;">電繪 Digital Painting</p>
                 <div class="w3-white" style="margin-bottom: 10px">
-                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:70%">70%</div>
                 </div>
-                <p class="w3-wide" style="margin: 5px 0px;">Social Media Operating</p>
+                <p class="w3-wide" style="margin: 5px 0px;">社群媒體經營 Social Media Operating</p>
                 <div class="w3-white" style="margin-bottom: 10px">
                     <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
                 </div>
                 <p class="w3-wide" style="margin: 5px 0px;">SEO</p>
                 <div class="w3-white" style="margin-bottom: 10px">
-                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:65%">65%</div>
                 </div>
                 <p class="w3-wide" style="margin: 5px 0px;">Google Analytics</p>
                 <div class="w3-white" style="margin-bottom: 10px">
-                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:50%">50%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">活動企劃 Event planning</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:82%">82%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">廣告文案 Advertising Copywritng</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:89%">89%</div>
+                </div>
+                <p class="w3-wide" style="margin: 5px 0px;">編劇 Screenwriting</p>
+                <div class="w3-white" style="margin-bottom: 10px">
+                    <div class="w3-container w3-padding-small w3-center w3-grey" style="width:48%">48%</div>
                 </div>
 
-                <p><button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom" href="/assets/proflio/beergame.jpg" download="履歷">Download Resume</button></p>
+                <p><button type="button" class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom" href="/assets/profolio.pdf" download="履歷">Download Resume</button></p>
                 <hr class="w3-opacity">
 
 
@@ -427,26 +194,26 @@
 
         <div class="w3-row w3-center w3-dark-grey w3-padding-16">
             <div class="w3-quarter w3-section">
-                <span class="w3-xlarge">14+</span><br>
-                Partners
+                <span class="w3-xlarge">4+</span><br>
+                信任夥伴
             </div>
             <div class="w3-quarter w3-section">
-                <span class="w3-xlarge">55+</span><br>
-                Projects Done
+                <span class="w3-xlarge">16+</span><br>
+                完成專案
             </div>
             <div class="w3-quarter w3-section">
-                <span class="w3-xlarge">89+</span><br>
-                Happy Clients
+                <span class="w3-xlarge">7+</span><br>
+                在地經驗
             </div>
             <div class="w3-quarter w3-section">
-                <span class="w3-xlarge">150+</span><br>
-                Meetings
+                <span class="w3-xlarge">13+</span><br>
+                專業技能
             </div>
         </div>
 
         <div class="w3-content w3-container text-center" style="margin: 0px;padding: 0px;">
             <!-- 隱藏評價-->
-            <button class="" type="button" data-toggle="collapse" data-target="#comment" aria-controls="#comment" aria-expanded="false" aria-label="Toggle navigation" style="height: 100px;width: 100%;padding: 0px;margin: 0px;font-size: 150%;border: none;background-color:rgba(0,0,0,0.3);cursor: pointer;">他人評價</button>
+            <button class="" type="button" data-toggle="collapse" data-target="#comment" aria-controls="#comment" aria-expanded="false" aria-label="Toggle navigation" style="height: 100px;width: 100%;padding: 0px;margin: 0px;font-size: 150%;border: none;background-color:rgba(0,0,0,0.3);cursor: default;" disabled>他人評價(準備中)</button>
             <div class="collapse " id="comment" style="">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <img src="/w3images/avatar_smoke.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
@@ -487,58 +254,59 @@
 
             <div class="w3-row-padding w3-center  w3-section">
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/AbandonedBuilding.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                    <img src="/assets/proflio/pho/AbandonedBuilding.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="廢棄的彩色建築">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/3cupsofbeer.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                    <img src="/assets/proflio/pho/3cupsofbeer.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="吉姆老爹精釀啤酒">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/1091music.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                    <img src="/assets/proflio/pho/1091music.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="淡水南北軒送匾儀式">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/USR.png" style="width:100%;height: 139px;max-height: 100%; object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                    <a target="_blank" href="https://www.youtube.com/watch?v=i1IhEc7NJ3g"><img src="/assets/proflio/pho/USR.png" style="width:100%;height: 139px;max-height: 100%; object-fit: cover;outline: 2px solid #58B2DC;"  class="w3-hover-opacity" alt="台大實驗林USR微電影紀錄片MAKASKAS"></a>
+                    
                 </div>
             </div>
 
             <div class="w3-row-padding w3-center  w3-section">
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/darkview.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                    <img src="/assets/proflio/pho/darkview.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="老房子">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/dog.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                    <img src="/assets/proflio/pho/dog.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="可愛的狗">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/moringroad.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                    <img src="/assets/proflio/pho/moringroad.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="清晨的林間道路">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/nightmoon.jpg" style="width:100%;height: 120%;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                    <img src="/assets/proflio/pho/nightmoon.jpg" style="width:100%;height: 120%;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="夜晚的野餐">
                 </div>
             </div>
 
             <div class="w3-row-padding w3-center w3-section" style="">
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/amazing.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+                    <img src="/assets/proflio/pho/amazing.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="花蓮羅山的鄉村">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/BEERS.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+                    <img src="/assets/proflio/pho/BEERS.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="精釀啤酒">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/food2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+                    <img src="/assets/proflio/pho/food2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="慢島生活的午餐">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/pho/MysteriousCat.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+                    <img src="/assets/proflio/pho/MysteriousCat.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="看見貓咪">
                 </div>
                 <div class="col-12" style="display: flex;align-items: center;justify-content: center;">
-                    <button class="w3-btn w3-padding-large w3-light-grey" style="margin:32px auto;border: 1px solid #000"><a href="">SEE MORE</a></button>
+                    <button class="w3-btn w3-padding-large w3-light-grey" style="margin:32px auto;border: 1px solid #000"><a target="_blank" href="https://drive.google.com/drive/folders/1rCFaTVYmg7tYIjUW6iPV-Sae4X_a2W_e?usp=sharing">SEE MORE</a></button>
                 </div>
 
             </div>
@@ -567,57 +335,66 @@
 
             <div class="w3-row-padding w3-center  w3-section">
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/beergame.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                    <a target="_blank" href="https://drive.google.com/drive/folders/1f_h9vnd9CouyD0ivFdpbzJx5HDIOR9mE?usp=sharing">
+                    <img src="/assets/proflio/des/beergame.jpg" style="width:100%;height: 124px;object-fit: cover;"  class="w3-hover-opacity" alt="精釀啤酒桌遊 遊戲設計 美術 文案" data-text="精釀啤酒桌遊">
+                    </a>
+                    
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/guam1cover.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                    <img src="/assets/proflio/des/guam1cover.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="關島觀光局粉專封面">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/guamnewyear.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                    <img src="/assets/proflio/des/guamnewyear.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="關島觀光局新年賀卡">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/hondalf.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                    <img src="/assets/proflio/des/hondalf.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Honda Taiwan粉專元宵節圖素">
                 </div>
             </div>
 
             <div class="w3-row-padding w3-center  w3-section">
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/kydesign.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+                    <img src="/assets/proflio/des/kydesign.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="大理石漸層特效練習">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/magicforest.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+                    <img src="/assets/proflio/des/magicforest.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="光影森林 Photoshop數位製圖">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/nogame.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+                    <img src="/assets/proflio/des/nogame.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="遊戲宇宙 Photoshop數位製圖">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/phantastic.JPG" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+                    <img src="/assets/proflio/des/phantastic.JPG" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="2018台大師大時系聯合舞會 主視覺">
                 </div>
             </div>
 
             <div class="w3-row-padding w3-center w3-section">
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/roadkill.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+                    <a target="_blank" href="https://drive.google.com/drive/folders/1r2et5leAXKhvXq8kf_ugMOLw2YJPHtNy?usp=sharing">
+                        <img src="/assets/proflio/des/roadkill.png" style="width:100%;height: 124px;object-fit: cover;outline: 2px solid #58B2DC;"  class="w3-hover-opacity" alt="路殺主題環保桌遊 遊戲設計 美術 文案">
+                    </a>
+                    
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="/assets/proflio/des/Snow%20Fox.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+                    <img src="/assets/proflio/des/Snow%20Fox.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="雪狐 電腦繪圖">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="assets/proflio/des/sunrise.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+                    <img src="assets/proflio/des/sunrise.jpg" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="日出 電腦繪圖">
                 </div>
 
                 <div class="w3-col m3">
-                    <img src="assets/proflio/des/ThatNight.png" style="width:100%;height: 124px;object-fit: cover;" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+                    <a target="_blank" href="https://kaiyu0115.github.io/webStoryTelling/That%20Night.html">
+                        <img src="assets/proflio/des/ThatNight.png" style="width:100%;height: 124px;object-fit: cover;outline: 2px solid #58B2DC;"  class="w3-hover-opacity" alt="那一夜，我成為酒店公關 數位專題 前端設計 美術製作">
+                    </a>
+                    
                 </div>
-                <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px;border: 1px solid #000"><a href="">SEE MORE</a></button>
+                <button class="w3-btn w3-padding-large w3-light-grey" style="margin-top:64px;border: 1px solid #000"><a target="_blank" href="https://drive.google.com/drive/folders/13RK4k1HUP5a-qj8lCvvJ5imke9ME2B7c?usp=sharing">SEE MORE</a></button>
             </div>
         </div>
 
@@ -639,7 +416,7 @@
 
         <div class="w3-content w3-container w3-padding-64">
             <h3 class="w3-center">嘗試新的冒險</h3>
-            <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+            <p class="w3-center"><em> 點幻燈片看詳細成果</em></p>
 
             <!-- Photography Start -->
             <div id="" class="">
@@ -652,7 +429,7 @@
                                 從行銷企劃到遊戲設計
                             </p>
                             <br>
-                            <a href="#" target="_blank" class="btn btn-primary btn-lg ml-5">Learn More</a>
+                            <a href="https://drive.google.com/drive/folders/1VFwqzl0RYWxxzbZ1pU05Q85e-ReHv8Kl?usp=sharing" target="_blank" class="btn btn-primary btn-lg ml-5 mybtn">Learn More</a>
                         </div>
                         <div class="col-lg-8">
                             <!-- Slideshow container -->
@@ -661,20 +438,29 @@
                                 <!-- Full-width images with number and caption text -->
                                 <div class="mySlides fade">
                                     <div class="numbertext">1 / 3</div>
-                                    <img src="assets/proflio/mar/live.jpg" style="width:100%">
-                                    <div class="text">Caption Text</div>
+                                    <a target="_blank" href="https://www.facebook.com/216428085799392/videos/691449964757183/?__tn__=%2CO-R">
+                                        <img  src="assets/proflio/mar/live.jpg" style="width:100%;" >
+                                    </a>
+                                    
+                                    <div class="text">麻豆農會IMC直播企劃</div>
                                 </div>
 
                                 <div class="mySlides fade">
                                     <div class="numbertext">2 / 3</div>
-                                    <img src="assets/proflio/mar/%E6%B4%84%E6%B8%B8.PNG" style="width:100%">
-                                    <div class="text">Caption Two</div>
+                                    <a target="_blank" href="https://drive.google.com/file/d/1DUhYT7YGcJZXwA3C6EyeyRqEQuaSQYmy/view?usp=sharing">
+                                        <img src="assets/proflio/mar/%E6%B4%84%E6%B8%B8.PNG" style="width:100%">
+                                    </a>
+                                    
+                                    <div class="text">大專生洄游農村競賽 人文關懷獎</div>
                                 </div>
 
                                 <div class="mySlides fade">
                                     <div class="numbertext">3 / 3</div>
-                                    <img src="assets/proflio/mar/%E9%BA%BB%E8%B1%86%E8%BE%B2%E6%9C%83.PNG" style="width:100%">
-                                    <div class="text">Caption Three</div>
+                                    <a target="_blank" href="https://drive.google.com/file/d/1qdKNapZcUqDyDV_6NCIByGWTgWoeUxSs/view?usp=sharing">
+                                        <img src="assets/proflio/mar/%E9%BA%BB%E8%B1%86%E8%BE%B2%E6%9C%83.PNG" style="width:100%">
+                                    </a>
+                                    
+                                    <div class="text">麻豆農會IMC整合行銷企劃</div>
                                 </div>
 
                                 <!-- Next and previous buttons -->
@@ -700,9 +486,9 @@
             <!-- Photography End -->
         </div>
 
-        <div class="bgimg-3 w3-display-container w3-opacity-min" id="contact" style="background-image: url(assets/proflio/pho/coco.jpg);background-attachment: fixed;">
+        <div class="bgimg-2 w3-display-container w3-opacity-min" id="contact" style="background-image: url(assets/proflio/pho/coco.jpg);background-attachment: fixed;">
             <div class="w3-display-middle">
-                <span class="w3-xxlarge w3-text-white w3-wide shadow">聯絡我們</span>
+                <span class="w3-xxlarge w3-text-white w3-wide shadow">聯絡資訊</span>
             </div>
         </div>
 
@@ -710,7 +496,7 @@
         <div class="container-fluid padding">
             <div class="row welcome text-center">
                 <div class="col-12">
-                    <h1>團隊夥伴</h1>
+                    <h1>參與團隊</h1>
                 </div>
                 <hr>
             </div>
@@ -721,32 +507,32 @@
         <div class="container-fluid padding">
             <div class="row padding">
                 <div class="col-md-4">
-                    <div class="card mycard">
+                    <div class="w3-card mycard">
                         <img class="card-img-top" src="assets/team1.png">
                         <div class="card-body">
-                            <h4 class="card-tittle">card</h4>
-                            <p class="card-text">this is a card.</p>
-                            <a href="#" class="btn btn-primary ">See Profile</a>
+                            <h4 class="card-tittle">生傳系畢業製作</h4>
+                            <p class="card-text">生傳系第一屆畢業製作，團隊預計在4/30~5/2於花博策展</p>
+                            <a href="http://www.bicd.ntu.edu.tw/" class="btn btn-primary mybtn">看更多</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mycard">
-                        <img class="card-img-top" src="assets/team2.png">
+                    <div class="w3-card mycard">
+                        <img class="card-img-top" src="assets/ds.PNG">
                         <div class="card-body">
-                            <h4 class="card-tittle">card</h4>
-                            <p class="card-text">this is a card.</p>
-                            <a href="#" class="btn btn-primary ">See Profile</a>
+                            <h4 class="card-tittle">台大創新設計學院</h4>
+                            <p class="card-text">從學員到加入課程團隊，參與活動並實踐USR，目前為D-Music助教</p>
+                            <a href="https://dschool.ntu.edu.tw/" class="btn btn-primary mybtn">看更多</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card mycard">
+                    <div class="w3-card mycard">
                         <img class="card-img-top" src="assets/team3.png">
                         <div class="card-body">
-                            <h4 class="card-tittle">card</h4>
-                            <p class="card-text">this is a card.</p>
-                            <a href="#" class="btn btn-primary ">See Profile</a>
+                            <h4 class="card-tittle">敬請期待</h4>
+                            <p class="card-text">To be continued.<br><br> </p>
+                            <a type="button" href="#" class="btn btn-primary mybtn" style="opacity: 0.6;cursor:default" disabled>看更多?</a>
                         </div>
                     </div>
                 </div>
@@ -767,9 +553,9 @@
                         <br>
                         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <br>Email: kev80814@gmail.com<br>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 form">
                         <p>如有聯繫需求，也可以直接填寫並送出下方表格，感謝!</p>
-                        <form action="/action_page.php" target="_blank">
+                        <form action="https://formspree.io/f/xleoyjyj" method="post" id="my-form">
                             <div class="w3-section">
                                 <label>Name</label>
                                 <input class="w3-input w3-border" type="text" name="Name" required>
@@ -780,11 +566,14 @@
                             </div>
                             <div class="w3-section">
                                 <label>Message</label>
-                                <input class="w3-input w3-border" type="text" name="Message" required>
+                                <textarea name="Message" id="message" class="w3-input w3-border" required>
+                                </textarea>
+                                
                             </div>
-                            <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
+                            <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom"><span>Send Message</span></button>
+                            
                         </form>
-
+                        <div id="status" style="text-align: center" ></div>
                     </div>
                 </div>
 
@@ -795,18 +584,21 @@
 
         <!-- Footer -->
         <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off" style="position: relative;bottom: -50px;">
-            <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-            <div class="w3-xlarge w3-section">
-                <a href="" ><i class="fab fa-facebook-f w3-hover-opacity " style="width: 30px;color: aqua;"></i></a>
-                <a href="" ><i class="fab fa-instagram w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
-                <a href=""><i class="fab fa-linkedin-in w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
+            <a href="#home" class="w3-button w3-light-grey js-scroll-trigger"><i class="fa fa-arrow-up w3-margin-right "></i>To the top</a>
+            <div class="w3-xlarge w3-section" >
+                <a href="https://www.facebook.com/profile.php?id=100001526396257" ><i class="fab fa-facebook-f w3-hover-opacity " style="width: 30px;color: aqua;"></i></a>
+                <a href="https://www.instagram.com/kev310505/" ><i class="fab fa-instagram w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
+                <a href="www.linkedin.com/in/kaiyu-tsou"><i class="fab fa-linkedin-in w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
                 <a href=""><i class="fab fa-medium w3-hover-opacity" style="width: 30px;color: aqua;"></i></a>
             </div>
-            <p>Powered by <a href="" title="KaiYu Tsou" target="_blank" class="w3-hover-text-green">KaiYu Tsou</a></p>
+            <p>Powered by <a href="https://kaiyu-tsou.medium.com/" title="KaiYu Tsou" target="_blank" class="w3-hover-text-green">KaiYu Tsou</a></p>
         </footer>
 
         <!-- End page content -->
     </div>
+    
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/scripts.js"></script>
 
     <script>
         // Script to open and close sidebar
@@ -884,6 +676,55 @@
   }
 );
     </script>
+    
+    <script>
+  window.addEventListener("DOMContentLoaded", function() {
+
+    // get the form elements defined in your form HTML above
+    
+    var form = document.getElementById("my-form");
+   /* var button = document.getElementById("my-form-button"); */
+    var status = document.getElementById("status");
+
+    // Success and Error functions for after the form is submitted
+    
+    function success() {
+      form.reset();
+    status.classList.add("success");
+    status.innerHTML = "Thanks!";
+    }
+
+    function error() {
+      status.classList.add("error");
+    status.innerHTML = "Oops! There was a problem.";
+    }
+
+    // handle the form submission event
+
+    form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});
+  
+  // helper function for sending an AJAX request
+
+  function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
+</script>
 
 
 </body>
