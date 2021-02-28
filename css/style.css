@@ -1318,10 +1318,6 @@ body {
 
 
 
-
-
-
-
 .collapsing.width {
   -webkit-transition-property: width, visibility;
   transition-property: width, visibility;
